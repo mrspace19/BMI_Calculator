@@ -21,8 +21,7 @@
         function cal(){
             let h = parseInt(a.value);
             let w = parseInt(b.value);
-            let ans = (w / ((h * h)
-							/ 10000)).toFixed(2);
+            let ans = (w / ((h * h)/ 10000)).toFixed(2);
         if(h==="" || isNaN(h) && w==="" || isNaN(w))
          document.querySelector('p').innerHTML = "Provide a valid Height & Weight !";
         else if (h === "" || isNaN(h))
