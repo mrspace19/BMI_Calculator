@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <lable for="a1"> Height : </lable>
+    <input type="text" id="a1" placeholder="in cms"><br/><br/>
+    <lable for="a2">  Weight : </lable>
+    <input type="text" id="a2" placeholder="in kgs"><br/><br/>
+    <button id="btn">Calculate BMI</button>
+    <p>Result: </p>
+
+    <script >
+    var a =document.querySelector("#a1");
+        var b =document.querySelector("#a2");
+        var btn =document.querySelector("#btn");
+        btn.addEventListener("click",cal);
+        function cal(){
+            let h = parseInt(a.value);
+            let w = parseInt(b.value);
+            let ans = (w / ((h * h)
+							/ 10000)).toFixed(2);
+        if(h==="" || isNaN(h) && w==="" || isNaN(w))
+         document.querySelector('p').innerHTML = "Provide a valid Height & Weight !";
+        else if (h === "" || isNaN(h))
+		document.querySelector('p').innerHTML = "Provide a valid Height!";
+
+	else if (w === "" || isNaN(w))
+		document.querySelector('p').innerHTML = "Provide a valid Weight!";
+
+	
+	else {
+
+            if(ans<=18){
+                document.querySelector('p').innerText=`${ans} underweight`;
+                //document.querySelector("p").innerText="Underweight";
+        
+            }
+            else if(ans>18 && ans<=24){
+                document.querySelector('p').innerText=`${ans} normal`;
+            }
+        else if(ans>24 && ans<=32){
+            document.querySelector('p').innerText=`${ans} overweight`;
+        }
+        else{
+            document.querySelector('p').innerText=`${ans} obese`;
+        }
+    }
+       
+         }   
+        </script>
+</body>
+</html>
